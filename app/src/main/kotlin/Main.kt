@@ -1,6 +1,6 @@
-package cz.pocolor.game.app
+package cz.pocolor.game.logicry.app
 
-import cz.pocolor.game.ui.Resource
+import cz.pocolor.game.logicry.ui.Resource
 
 fun main() {
     println(Resource.text.appName)

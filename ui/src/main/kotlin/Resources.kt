@@ -1,4 +1,4 @@
-package cz.pocolor.game.ui
+package cz.pocolor.game.logicry.ui
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

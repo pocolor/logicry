@@ -12,7 +12,7 @@ plugins {
 
 include(":app")
 include(":utils")
-include(":gameEngine")
 include(":ui")
+include(":core")
 
 rootProject.name = "LogiCry"
