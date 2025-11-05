@@ -38,13 +38,17 @@ class ImmutableKeysMap<K: Comparable<K>, V> : Map<K, V>, Iterable<MutableMap.Mut
 
     constructor(vararg keys: K, defaultValue: V) : this(listOf(*keys), defaultValue)
 
-    constructor(vararg pairs: Pair<K, V>) {
+    constructor(pairs: Collection<Pair<K, V>>) {
         this.listEntries = pairs.map { SimpleEntry(it.first, it.second) }.sortedBy { it.key }
         this.keys = pairs.map { it.first }.toSet()
         this.size = listEntries.size
 
         validateNonDuplicateKeys()
     }
+
+    constructor(vararg pairs: Pair<K, V>) : this(listOf(*pairs))
+
+    constructor(map: Map<K, V>) : this(map.map { it.key to it.value })
 
     fun validateNonDuplicateKeys() {
         require(listEntries.size == keys.size) {
